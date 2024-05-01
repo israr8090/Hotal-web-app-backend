@@ -11,6 +11,7 @@ router.post('/bookroom', async (req, res) => {
     try {
         const newbooking = new Booking({
             room,
+            room:room.roomname,
             roomid: room._id,
             userid,
             fromdate,
@@ -29,6 +30,7 @@ router.post('/bookroom', async (req, res) => {
 
         //--push in currentbooking Array of Room
         roomtemp.currentbookings.push({
+            room: room.roomname,
             bookingid: booking._id,
             fromdate: fromdate,
             todate: todate,
