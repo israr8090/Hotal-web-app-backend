@@ -6,11 +6,11 @@ const Booking = require('../models/booking')
 ////--book room-------------
 router.post('/bookroom', async (req, res) => {
     const { room, userid, fromdate, todate, totalamount, totaldays } = req.body;
-    console.log(req.body)
+    // console.log(req.body)
 
     try {
         const newbooking = new Booking({
-            room: room.name,
+            room,
             roomid: room._id,
             userid,
             fromdate,
