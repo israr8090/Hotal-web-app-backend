@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Room = require('../models/room')
 
-//////------------------post for add new room
+//////--post for add new room----
 router.post('/addroom', async(req, res)=>{
     try {
         // console.log(req.body)
@@ -23,6 +23,7 @@ router.post('/addroom', async(req, res)=>{
 router.get("/getallrooms", async (req, res)=>{
     try {
         const rooms = await Room.find({});
+        // console.log(rooms)
         res.send(rooms);
 
     } catch (error) {
